@@ -1,13 +1,25 @@
+*{
+    border: none;
+}
 body{
 background: #121212;
 }
 
 .main{
-    padding: 5px;
+    border-top: none;
+    padding-top: 0;
+    padding-left: 1%;
 }
 
 .main .top{
+    background-color: #121212;
+    position: fixed;
+    top: 0%;
+    z-index: 1;
     display: flex;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 8px;
     width: 100%;
     justify-content: flex-start;
 }
@@ -16,6 +28,7 @@ background: #121212;
     margin-right: 10px;
     background-color: #121212;
     border: none;
+    padding: 0;
 }
 .main .top .perfil .perfilbutton .img {
     width: 35x;
@@ -41,6 +54,8 @@ background: #121212;
    }
 
 .main .feed {
+    z-index: 0;
+    margin-top: 60px;
     background: grey;
 }
 
@@ -49,5 +64,23 @@ background: #121212;
 }
 
 .main .feed .areaplaylists .areatitle {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
+}
+.main .feed .areaplaylists .areatitle h1 {
+    border: none;
+    padding: 5px 0;
+    margin: 0;
+}
+
+.main .feed .areaplaylists .areatitle button {
+    height: fit-content;
+    background-color: transparent;
+    color: white;
+    font-size: 7px;
+    padding: 0;
+    border: 0;
+    margin: 0;
 }
