@@ -1,17 +1,20 @@
-*{
+* {
+    color: white;
     border: none;
-}
-body{
-background: #121212;
+    font-family: Calibri;
 }
 
-.main{
+body {
+    background: #121212;
+}
+
+.main {
     border-top: none;
     padding-top: 0;
     padding-left: 1%;
 }
 
-.main .top{
+.main .top {
     background-color: #121212;
     position: fixed;
     top: 0%;
@@ -30,12 +33,15 @@ background: #121212;
     border: none;
     padding: 0;
 }
+
 .main .top .perfil .perfilbutton .img {
     width: 35x;
     height: 35px;
-    border-radius: 50%;    
+    border-radius: 50%;
 }
+
 .main .top .buttontop button {
+    color: black;
     min-width: 70px;
     height: 35px;
     border-radius: 20px;
@@ -43,20 +49,20 @@ background: #121212;
     padding-right: 10px;
     margin-right: 10px;
     border: none;
-    background-color: grey;   
+
 }
 
 .main .top .buttontop button:active {
- background-color: green;
+    background-color: green;
 }
+
 .main .top .buttontop button:target {
     background-color: green;
-   }
+}
 
 .main .feed {
     z-index: 0;
     margin-top: 60px;
-    background: grey;
 }
 
 .main .feed .areaplaylists {
@@ -69,18 +75,122 @@ background: #121212;
     justify-content: space-between;
     width: 100%;
 }
-.main .feed .areaplaylists .areatitle h1 {
+
+.areatitle h1 {
+    font-size: 30px;
     border: none;
     padding: 5px 0;
     margin: 0;
 }
 
-.main .feed .areaplaylists .areatitle button {
+.areatitle button {
     height: fit-content;
     background-color: transparent;
-    color: white;
-    font-size: 7px;
+    font-size: 12px;
     padding: 0;
     border: 0;
     margin: 0;
+}
+
+.main .feed .areaplaylists .separarplaylists {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-flow: row wrap;
+}
+
+.main .feed .areaplaylists .separarplaylists .playlist {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+}
+
+.main .feed .areaplaylists .separarplaylists .playlist .areaimg {
+    border: none;
+    padding: none;
+    margin: 0 0 3px 0;
+    height: 70px;
+    width: 70px;
+}
+
+.main .feed .areaplaylists .separarplaylists .playlist .areaimg img {
+    max-width: 100%;
+    height: auto;
+
+}
+
+.main .feed .areaplaylists .separarplaylists .playlist .text {
+    display: grid;
+    align-content: end;
+}
+
+.dailymix {
+    height: 240px;
+}
+
+.dailymix .roll {
+    height: 240px;
+    display: flex;
+    overflow: hidden;
+    overflow: scroll;
+    white-space: nowrap;
+}
+
+.dailymix .roll .areaimg {
+    margin: 5px;
+    width: 140px;
+    height: 140px;
+    display: grid;
+    grid-template-columns: 70px 70px;
+    grid-template-rows: 70px 70px;
+}
+
+.dailymix .roll .areaimg img {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dailymix .roll .areaimg div {
+    z-index: 1
+}
+
+.dailymix .roll .areaimg .daylimix {
+    margin: 0px;
+    position: relative;
+    top: -20px;
+    align-self: flex-end;
+    color: palevioletred;
+}
+
+.dailymix .roll .areaimg .num {
+    margin: 0;
+    position: relative;
+    top: -20px;
+    align-self: last baseline;
+    justify-self: last baseline;
+    color: palevioletred;
+}
+
+.daily {
+    width: 150px;
+    height: 185px;
+    display: block;
+    margin: 0 5px;
+}
+
+.daily .artists {
+    padding: 0;
+    margin: 0;
+    border: none;
+
+}
+
+.roll .artists h3 {
+    font-size: 15px;
+    margin: 0;
+    padding: 0 0 0 5px;
+    border: 0;
+    width: 145px;
+    height: 40px;
+    white-space: normal;
+    overflow: hidden;
 }
