@@ -6,15 +6,16 @@
 
 body {
     background: #121212;
+    display:block;
+
 }
 
-.main {
+header {
     border-top: none;
     padding-top: 0;
-    padding-left: 1%;
 }
 
-.main .top {
+header .top {
     background-color: #121212;
     position: fixed;
     top: 0%;
@@ -27,20 +28,20 @@ body {
     justify-content: flex-start;
 }
 
-.main .top .perfil .perfilbutton {
+header .top .perfil .perfilbutton {
     margin-right: 10px;
     background-color: #121212;
     border: none;
     padding: 0;
 }
 
-.main .top .perfil .perfilbutton .img {
+header .top .perfil .perfilbutton .img {
     width: 35x;
     height: 35px;
     border-radius: 50%;
 }
 
-.main .top .buttontop button {
+header .top .buttontop button {
     color: black;
     min-width: 70px;
     height: 35px;
@@ -52,24 +53,29 @@ body {
 
 }
 
-.main .top .buttontop button:active {
+header .top .buttontop button:active {
     background-color: green;
 }
 
-.main .top .buttontop button:target {
+header .top .buttontop button:target {
     background-color: green;
 }
 
-.main .feed {
+main{
+    margin-top: 50px;
+    
+}
+
+main .feed {
     z-index: 0;
     margin-top: 60px;
 }
 
-.main .feed .areaplaylists {
+main .feed .areaplaylists {
     display: block;
 }
 
-.main .feed .areaplaylists .areatitle {
+main .feed .areaplaylists .areatitle {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -92,18 +98,28 @@ body {
     margin: 0;
 }
 
-.main .feed .areaplaylists .separarplaylists {
+.playlist{
+    border:2px solid gray ;
+    margin:4px;
+    background-color: gray;
+    height: 80px;
+    width: 300px;
+    align-items: center;
+    align-content: center;
+}
+
+ .separarplaylists {
     display: grid;
     grid-template-columns: 1fr 1fr;
     flex-flow: row wrap;
 }
 
-.main .feed .areaplaylists .separarplaylists .playlist {
+.separarplaylists .playlist {
     display: grid;
     grid-template-columns: 70px 1fr;
 }
 
-.main .feed .areaplaylists .separarplaylists .playlist .areaimg {
+ .playlist .areaimg {
     border: none;
     padding: none;
     margin: 0 0 3px 0;
@@ -111,19 +127,31 @@ body {
     width: 70px;
 }
 
-.main .feed .areaplaylists .separarplaylists .playlist .areaimg img {
+ .playlist .areaimg img {
     max-width: 100%;
     height: auto;
 
 }
 
-.main .feed .areaplaylists .separarplaylists .playlist .text {
+ .separarplaylists .playlist .text {
     display: grid;
     align-content: end;
 }
 
+.station {
+    display: flex;
+    margin: solid 80px;
+    border: solid 10px;
+}
+
+.areastation{
+    display: grid;
+}
+
 .dailymix {
     height: 240px;
+    margin-bottom: 50px;
+
 }
 
 .dailymix .roll {
@@ -193,6 +221,11 @@ body {
     height: 40px;
     white-space: normal;
     overflow: hidden;
+}
+
+
+button:hover{
+    cursor: pointer;
 }
 
 /*Mudança local da url da pasta*/
