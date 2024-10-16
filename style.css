@@ -1,21 +1,26 @@
 * {
     color: white;
-    border: none;
+    border-right: 5px solid transparent;
     font-family: Calibri;
+
 }
 
 body {
     background: #121212;
     display:block;
+    border: none;
+    width: 100%;
+    height: auto;
 
 }
 
+/* cabeçalho */
 header {
     border-top: none;
     padding-top: 0;
 }
 
-header .top {
+.top {
     background-color: #121212;
     position: fixed;
     top: 0%;
@@ -28,20 +33,19 @@ header .top {
     justify-content: flex-start;
 }
 
-header .top .perfil .perfilbutton {
+.perfilbutton {
     margin-right: 10px;
     background-color: #121212;
     border: none;
     padding: 0;
 }
-
-header .top .perfil .perfilbutton .img {
+.perfilbutton .img {
     width: 35x;
     height: 35px;
     border-radius: 50%;
 }
 
-header .top .buttontop button {
+.buttontop button {
     color: black;
     min-width: 70px;
     height: 35px;
@@ -52,30 +56,34 @@ header .top .buttontop button {
     border: none;
 
 }
-
-header .top .buttontop button:active {
+.buttontop button:active {
+    background-color: green;
+}
+.buttontop button:target {
     background-color: green;
 }
 
-header .top .buttontop button:target {
-    background-color: green;
-}
-
+/* Corpo */
 main{
     margin-top: 50px;
     
 }
 
-main .feed {
-    z-index: 0;
-    margin-top: 60px;
+/*--Feed--*/
+.esp{
+    border: solid 5px transparent;
+    width: 100vw;
+}
+.feed {
+   z-index: 0;
+    
 }
 
-main .feed .areaplaylists {
+.areaplaylists {
     display: block;
 }
 
-main .feed .areaplaylists .areatitle {
+.areaplaylists .areatitle {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -103,12 +111,15 @@ main .feed .areaplaylists .areatitle {
     margin:4px;
     background-color: gray;
     height: 80px;
-    width: 300px;
+    width: auto;
+    max-width: 250px;
+    min-width: 200px;
     align-items: center;
     align-content: center;
 }
 
- .separarplaylists {
+.separarplaylists {
+    width: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     flex-flow: row wrap;
@@ -138,6 +149,7 @@ main .feed .areaplaylists .areatitle {
     align-content: end;
 }
 
+/*--Estação--*/
 .station {
     display: flex;
     margin: solid 80px;
@@ -181,7 +193,9 @@ main .feed .areaplaylists .areatitle {
     z-index: 1
 }
 
-.dailymix .roll .areaimg .daylimix {
+.mix {
+    background-color: aquamarine;
+    opacity: 75%;
     margin: 0px;
     position: relative;
     top: -20px;
@@ -189,7 +203,9 @@ main .feed .areaplaylists .areatitle {
     color: palevioletred;
 }
 
-.dailymix .roll .areaimg .num {
+.num {
+    background-color: aquamarine;
+    opacity: 75%;
     margin: 0;
     position: relative;
     top: -20px;
