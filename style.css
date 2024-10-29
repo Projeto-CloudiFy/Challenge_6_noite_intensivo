@@ -46,6 +46,7 @@ header {
 }
 
 .buttontop button {
+    background-color: rgb(30, 215, 96);
     color: black;
     min-width: 70px;
     height: 35px;
@@ -107,9 +108,9 @@ main{
 }
 
 .playlist{
-    border:2px solid gray ;
+    border:2px solid rgb(51, 51, 51) ;
     margin:4px;
-    background-color: gray;
+    background-color: rgb(51, 51, 51);
     height: 80px;
     width: auto;
     max-width: 250px;
