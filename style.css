@@ -1,45 +1,44 @@
-*{
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
     box-sizing: border-box;
     color: white;
 }
 
 html {
+    display: block;
     background: #121212;
-    color: white;
-    border-right: 15px solid transparent;
     font-family: Calibri;
 }
 
 body {
-    display:block;
-    border: none;
+    padding: 5px;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 header {
-    border-top: none;
-    padding-top: 0;
-}
-
-.top {
     position: fixed;
-    top: 0%;
-    z-index: 1;
-    display: flex;
-    border: none;
-    padding-top: 10px;
-    padding-bottom: 8px;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
+    background-color: #121212;
+    z-index: 100;
+    display: flex;
+    padding: 13px 0;
     justify-content: flex-start;
 }
 
+
 .perfilbutton {
-    margin-right: 10px;
+    margin: 0 15px;
     background-color: #121212;
     border: none;
     padding: 0;
 }
+
 .perfilbutton .img {
     width: 35x;
     height: 35px;
@@ -58,27 +57,31 @@ header {
     border: none;
 
 }
+
 .buttontop button:active {
     background-color: green;
 }
+
 .buttontop button:target {
     background-color: green;
 }
 
-/* Corpo */
-main{
-    margin-top: 50px;
-    
+/*Espaçamento entre o main e os lados*/
+.esp {
+    width: 100%;
+    padding: 0;
 }
 
-/*--Feed--*/
-.esp{
-    border: solid 5px transparent;
-    width: 100vw;
+/* Corpo */
+main {
+    margin-top: 55px;
+    border-right: 1px;
+
 }
+
 .feed {
-   z-index: 0;
-    
+    z-index: 0;
+
 }
 
 .areaplaylists {
@@ -104,13 +107,13 @@ main{
     height: fit-content;
     background-color: transparent;
     font-size: 12px;
-    padding: 0 25px 0 0;
+    padding: 0;
     border: 0;
-    margin: 0;
+    margin: 10px;
 }
 
-.playlist{
-    margin:4px;
+.playlist {
+    margin: 4px;
     background-color: rgb(51, 51, 51);
     width: auto;
     height: 55px;
@@ -121,7 +124,9 @@ main{
 }
 
 .separarplaylists {
-    margin: 0 20px 0 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
     width: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -133,7 +138,7 @@ main{
     grid-template-columns: 55px 1fr;
 }
 
- .playlist .areaimg {
+.playlist .areaimg {
     border: none;
     padding: none;
     margin: 0;
@@ -150,9 +155,9 @@ main{
 
 }
 
-.separarplaylists .playlist .text {
-    margin: 0 0 0 5px;
-    width: 100%;;
+.separarplaylists .text {
+    margin: 0 0 0 10px;
+    width: 100%;
     display: grid;
     align-content: end;
 }
@@ -163,6 +168,7 @@ main{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    
 }
 
 .areaplaylists .nameartist {
@@ -172,48 +178,61 @@ main{
     text-overflow: ellipsis;
 }
 
-
-
-/*--Estação--*/
-.station {
-    display: flex;
-    margin: solid 80px;
-    border: solid 10px;
-}
-
-.areastation{
-    display: grid;
-}
-
-.dailymix {
-    height: 240px;
+.scroll_component {
+    height: 200px;
     margin-bottom: 50px;
 
 }
 
-.dailymix .roll {
-    height: 240px;
+.scroll_component .roll {
+    height: 200px;
     display: flex;
     overflow: scroll;
     white-space: nowrap;
+    scrollbar-width: none;
 }
 
-.dailymix .roll .areaimg {
+.scroll_component .areaimg {
     margin: 5px;
     width: 140px;
     height: 140px;
     display: grid;
     grid-template-columns: 70px 70px;
     grid-template-rows: 70px 70px;
+    border-radius: 5px;
 }
 
-.dailymix .roll .areaimg img {
+.scroll_component .areaimg img {
     z-index: 0;
     width: 100%;
     height: 100%;
 }
+.scroll_component .areaimg .img1 {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+}
+.scroll_component .areaimg .img2 {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 10px;
+}
+.scroll_component .areaimg .img3 {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+}
+.scroll_component .areaimg .img4 {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 10px;
+}
 
-.dailymix .roll .areaimg div {
+.scroll_component .areaimg div {
     z-index: 1
 }
 
@@ -225,9 +244,12 @@ main{
     top: -20px;
     align-self: flex-end;
     color: palevioletred;
+    border-bottom-left-radius: 10px;
+    text-align: center;
 }
 
 .num {
+    width: 21px;
     background-color: aquamarine;
     opacity: 75%;
     margin: 0;
@@ -236,16 +258,17 @@ main{
     align-self: last baseline;
     justify-self: last baseline;
     color: palevioletred;
+    border-bottom-right-radius: 10px;
 }
 
-.daily {
+.cards {
     width: 150px;
     height: 185px;
     display: block;
     margin: 0 5px;
 }
 
-.daily .artists {
+.cards .artists {
     padding: 0;
     margin: 0;
     border: none;
@@ -264,9 +287,49 @@ main{
 }
 
 
-button:hover{
+button:hover {
     cursor: pointer;
 }
 
-/*Mudança local da url da pasta*/
-/*Mudança local da url da pasta*/
+/* barra de navegação de baixo*/
+
+.navbar {
+    background-color: #121212;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    width: 100%;
+    justify-content: space-between;
+    opacity: 1;
+}
+
+.navbar .options {
+    margin: 0 25px;
+    width: 100px;
+
+}
+
+.navbar button {
+    background-color: #121212;
+    border: none;
+}
+.navbar img {
+    width: 50px;
+    height: 50px;
+}
+
+.navbar button:active {
+
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
