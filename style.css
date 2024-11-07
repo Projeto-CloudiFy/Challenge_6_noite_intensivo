@@ -45,8 +45,8 @@ header {
     border-radius: 50%;
 }
 
-.buttontop button {
-    background-color: rgb(30, 215, 96);
+.buttonTop {
+    background-color: rgb(51, 51, 51);
     color: black;
     min-width: 70px;
     height: 35px;
@@ -58,11 +58,7 @@ header {
 
 }
 
-.buttontop button:active {
-    background-color: green;
-}
-
-.buttontop button:target {
+.buttonTop.active {
     background-color: green;
 }
 
@@ -307,29 +303,21 @@ button:hover {
     width: 100%;
     justify-content: space-between;
     opacity: 1;
-}
-
-.navbar .options {
-    margin: 0 25px;
-    width: 100px;
-
+    height: 100px;
 }
 
 .navbar button {
+    margin: 0 25px;
+    width: 100px;
     background-color: #121212;
     border: none;
 }
+
 .navbar img {
     width: 50px;
     height: 50px;
 }
 
 .navbar button:active {
-
-    padding-block: 1px;
-    padding-inline: 6px;
-    border-width: 2px;
-    border-style: outset;
-    border-color: buttonborder;
-    border-image: initial;
+    padding-bottom: 6px;
 }
