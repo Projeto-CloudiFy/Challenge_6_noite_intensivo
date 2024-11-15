@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Cloudify</title>
@@ -10,32 +9,31 @@
 </head>
 
 <body>
-    <a href="index.html"><button class="teste">teste</button></a>
-    <div class="music-conteiner">
+  <div class="music-conteiner">
     <h4 id="titulo-playlist">nome da playlist</h4>
-    <img id="capa"  alt="capa do disco"> 
-    <audio src="musica/Colossus.mp3" id="audio"></audio>
+    <img id="cover" alt="capa do disco">
+    <audio id="audio"></audio>
     <div id="bellow-cover">
-    <div id = "info-song">
+      <div id="info-song">
         <div id="song-name">nome da musica</div>
-    <div id="band-name" class="ligth-color">nome da banda</div>
-    </div>
-    <button id ="like" class="button ligth-color"><i class="bi bi-heart"></i></button>
+        <div id="band-name" class="ligth-color">nome da banda</div>
+      </div>
+      <button id="like" class="button ligth-color"><i class="bi bi-heart"></i></button>
     </div>
     <div id="progress-bar">
-        <div id="current-progress"></div>
+      <div id="current-progress"></div>
     </div>
     <div id="button-conteiner">
-        <button id="repetir" class="button"><i class="bi bi-repeat"></i></button>
-        <button id="anterior" class="button button-navigate" class="button-navigate"><i class="bi bi-skip-start-fill"></i></button>
-        <button id="play" class="button button-biggest"><i class="bi bi-play-circle"></i></button>
-        <button id="proximo" class="button button-navigate"><i class="bi bi-skip-end-fill"></i></button>
-    <button id="random" class="button"><i class="bi bi-shuffle"></i></button>
+      <button id="repetir" class="button"><i class="bi bi-repeat"></i></button>
+      <button id="anterior" class="button button-navigate" class="button-navigate"><i
+          class="bi bi-skip-start-fill"></i></button>
+      <button id="play" class="button button-biggest"><i class="bi bi-play-circle"></i></button>
+      <button id="proximo" class="button button-navigate"><i class="bi bi-skip-end-fill"></i></button>
+      <button id="random" class="button"><i class="bi bi-shuffle"></i></button>
     </div>
-    </div>   
-    <script src="script.js"></script>
-    
-    </body>
+  </div>
+  <script src="script.js"></script>
 
-    </html>
-    
+</body>
+
+</html>
