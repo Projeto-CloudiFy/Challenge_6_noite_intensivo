@@ -3,7 +3,7 @@ const bandName = document.getElementById("band-name");
 const cover = document.getElementById("cover");
 const song = document.getElementById("audio");
 const play = document.getElementById("play");
-const heart = document.getElementById("like");
+const like = document.getElementById("like");
 const anterior = document.getElementById("anterior");
 const proximo = document.getElementById("proximo");
 const progressoBar = document.getElementById("current-progress");
@@ -30,14 +30,14 @@ let index = 0;
 
 
 //Função do botao pause para aparecer o botão play e dar play na musica
-function playSong() {
+function like() {
   play.querySelector(".bi").classList.remove("bi-play-circle");
   play.querySelector(".bi").classList.add("bi-pause-circle");
   song.play();
   isPlaying = true;
 }
 //Função do botao play para aparecer o botão pause e dar pause na musica
-function pauseSong() {
+function deslike() {
   play.querySelector(".bi").classList.add("bi-play-circle");
   play.querySelector(".bi").classList.remove("bi-pause-circle");
   song.pause();
@@ -51,7 +51,16 @@ function playPauseDecider() {
   else { playSong(); }
 }
 
-
+//Função do botao like da música
+function playSong() {
+  like.querySelector(".bi").classList.remove("bi bi-heart");
+  like.querySelector(".bi").classList.add("bi bi-heart-fill");
+}
+//Função do botao deslike da música
+function pauseSong() {
+  like.querySelector(".bi").classList.add("bi bi-heart");
+  like.querySelector(".bi").classList.remove("bi bi-heart-fill");
+}
 
 //funçao pra atualizar pra puxar as informações da musica
 
