@@ -58,8 +58,10 @@ header {
 
 }
 
-.buttonTop.active {
+/* Cor do botão quando está selecionado */
+.buttonTop.selected {
     background-color: green;
+    color: white;
 }
 
 /*Espaçamento entre o main e os lados*/

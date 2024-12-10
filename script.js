@@ -8,26 +8,27 @@ const proximo = document.getElementById("proximo");
 const progressoBar = document.getElementById("current-progress");
 const progress = document.getElementById("progress-bar")
 const like = document.getElementById("like")
+const buttons = document.querySelectorAll('.buttonTop');
 let isPlaying = false;
 let songLike = false;
 
-let Colossus = {
-  songName: "Colossus",
-  artist: "tyler the creator",
-  file: "Colossus"
-};
-
-let igor = {
-  songName: "igor",
-  artist: "tyler the creator",
-  file: "igor"
-};
-
-songName.innerText = "Colossus";
-//array com as musicas
-const playlist = [Colossus, igor];
+// Playlist
+const playlist = [
+  { songName: "Man in the Box", artist: "Acoustic n´ Roll", file: "Colossus" },
+  { songName: "Igor", artist: "Tyler the Creator", file: "igor" },
+];
 let index = 0;
 
+// Adicionar evento de clique para cada botão
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+      // Remover a classe 'selected' de todos os botões
+      buttons.forEach(b => b.classList.remove('selected'));
+      
+      // Adicionar a classe 'selected' ao botão clicado
+      button.classList.add('selected');
+  });
+});
 
 //Função do botao pause para aparecer o botão play e dar play na musica
 function playSong() {
