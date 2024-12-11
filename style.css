@@ -1,3 +1,4 @@
+/* Define o estilo padrão para todos os elementos */
 * {
     margin: 0;
     padding: 0;
@@ -6,21 +7,26 @@
     color: white;
 }
 
+/* Configurações gerais para o HTML */
 html {
     display: block;
     background: #121212;
     font-family: Calibri;
 }
 
+/* Configurações gerais para o corpo da página */
 body {
     padding: 0;
     width: 100%;
     height: 100%;
 }
+
+/* Classe para adicionar espaçamento */
 .pad {
     padding: 5px 5px 180px 5px;
 }
 
+/* Estilo fixo para o cabeçalho */
 header {
     position: fixed;
     top: 0;
@@ -34,7 +40,7 @@ header {
     justify-content: flex-start;
 }
 
-
+/* Estilo do botão de perfil */
 .perfilbutton {
     margin: 0 15px;
     background-color: #121212;
@@ -42,12 +48,14 @@ header {
     padding: 0;
 }
 
+/* Estilo da imagem dentro do botão de perfil */
 .perfilbutton .img {
-    width: 35x;
+    width: 35px;
     height: 35px;
     border-radius: 50%;
 }
 
+/* Estilo dos botões na parte superior */
 .buttonTop {
     background-color: rgb(51, 51, 51);
     color: black;
@@ -60,39 +68,41 @@ header {
     border: none;
 }
 
-.top button:active{
+/* Estado ativo para botões no topo */
+.top button:active {
     padding-bottom: 6px;
 }
 
-/* Cor do botão quando está selecionado */
+/* Estilo de seleção dos botões no topo */
 .buttonTop.selected {
     background-color: green;
     color: white;
 }
 
-/*Espaçamento entre o main e os lados*/
+/* Estilo para espaçamento lateral no elemento principal */
 .esp {
     width: 100%;
     padding: 0;
 }
 
-/* Corpo */
+/* Estilo principal do conteúdo da página */
 main {
     margin-top: 55px;
     border-right: 1px;
-
 }
 
+/* Estilo para a área de feed */
 .feed {
     z-index: 0;
-
 }
 
+/* Estilo da área de playlists */
 .areaplaylists {
     display: block;
     width: 100%;
 }
 
+/* Estilo do título da área de playlists */
 .areaplaylists .areatitle {
     align-items: center;
     display: flex;
@@ -100,6 +110,7 @@ main {
     width: 100%;
 }
 
+/* Estilo do título principal dentro da área de playlists */
 .areatitle h1 {
     font-size: 30px;
     border: none;
@@ -107,6 +118,7 @@ main {
     margin: 0;
 }
 
+/* Estilo dos botões dentro da área de título */
 .areatitle button {
     height: fit-content;
     background-color: transparent;
@@ -116,6 +128,7 @@ main {
     margin: 10px;
 }
 
+/* Estilo individual das playlists */
 .playlist {
     margin: 4px;
     background-color: rgb(51, 51, 51);
@@ -127,6 +140,7 @@ main {
     border: none;
 }
 
+/* Organização das playlists em um grid */
 .separarplaylists {
     margin: 0;
     padding: 0;
@@ -137,11 +151,13 @@ main {
     flex-flow: row wrap;
 }
 
+/* Estilo individual das playlists dentro do grid */
 .separarplaylists .playlist {
     display: grid;
     grid-template-columns: 55px 1fr;
 }
 
+/* Estilo para a área de imagens dentro da playlist */
 .playlist .areaimg {
     border: none;
     padding: none;
@@ -150,15 +166,16 @@ main {
     width: 55px;
 }
 
+/* Estilo para a imagem da playlist */
 .playlist .areaimg img {
     border: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     max-width: 100%;
     height: auto;
-
 }
 
+/* Estilo para o texto dentro da playlist */
 .separarplaylists .text {
     margin: 0 0 0 10px;
     width: 100%;
@@ -166,15 +183,16 @@ main {
     align-content: end;
 }
 
+/* Nome da playlist */
 .areaplaylists .nameplaylist {
     text-decoration: solid;
     font-size: 15px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    
 }
 
+/* Nome do artista na playlist */
 .areaplaylists .nameartist {
     font-size: 12px;
     white-space: nowrap;
@@ -182,12 +200,13 @@ main {
     text-overflow: ellipsis;
 }
 
+/* Estilo para componentes de rolagem */
 .scroll_component {
     height: 200px;
     margin-bottom: 50px;
-
 }
 
+/* Configuração de rolagem horizontal */
 .scroll_component .roll {
     height: 200px;
     display: flex;
@@ -196,6 +215,7 @@ main {
     scrollbar-width: none;
 }
 
+/* Estilo para a área de imagem dentro do componente de rolagem */
 .scroll_component .areaimg {
     margin: 5px;
     width: 140px;
@@ -206,29 +226,35 @@ main {
     border-radius: 5px;
 }
 
+/* Estilo para imagens individuais dentro da área de imagem */
 .scroll_component .areaimg img {
     z-index: 0;
     width: 100%;
     height: 100%;
 }
+
+/* Configuração para as quatro subimagens em posições específicas */
 .scroll_component .areaimg .img1 {
     z-index: 0;
     width: 100%;
     height: 100%;
     border-top-left-radius: 10px;
 }
+
 .scroll_component .areaimg .img2 {
     z-index: 0;
     width: 100%;
     height: 100%;
     border-top-right-radius: 10px;
 }
+
 .scroll_component .areaimg .img3 {
     z-index: 0;
     width: 100%;
     height: 100%;
     border-bottom-left-radius: 10px;
 }
+
 .scroll_component .areaimg .img4 {
     z-index: 0;
     width: 100%;
@@ -236,10 +262,12 @@ main {
     border-bottom-right-radius: 10px;
 }
 
+/* Estilo para sobreposição de elementos na área de imagem */
 .scroll_component .areaimg div {
-    z-index: 1
+    z-index: 1;
 }
 
+/* Estilo para a etiqueta "Mix" exibida sobre imagens */
 .mix {
     background-color: aquamarine;
     opacity: 75%;
@@ -252,6 +280,7 @@ main {
     text-align: center;
 }
 
+/* Estilo para exibição de números na área de imagem */
 .num {
     width: 21px;
     background-color: aquamarine;
@@ -265,6 +294,7 @@ main {
     border-bottom-right-radius: 10px;
 }
 
+/* Estilo para os cartões exibidos */
 .cards {
     width: 150px;
     height: 185px;
@@ -272,13 +302,14 @@ main {
     margin: 0 5px;
 }
 
+/* Estilo para artistas dentro dos cartões */
 .cards .artists {
     padding: 0;
     margin: 0;
     border: none;
-
 }
 
+/* Estilo para texto do título dos artistas dentro de um cartão */
 .roll .artists h3 {
     font-size: 15px;
     margin: 0;
@@ -290,13 +321,12 @@ main {
     overflow: hidden;
 }
 
-
+/* Estilo para o estado de hover em botões */
 button:hover {
     cursor: pointer;
 }
 
-/* barra de navegação de baixo*/
-
+/* Barra de navegação fixa na parte inferior */
 .navbar {
     background-color: #121212;
     position: fixed;
@@ -314,6 +344,7 @@ button:hover {
     height: 100px;
 }
 
+/* Estilo dos botões dentro da barra de navegação */
 .navbar button {
     display: flex;
     justify-content: center;
@@ -323,111 +354,129 @@ button:hover {
     border: none;
 }
 
+/* Estilo de botão ativo na barra de navegação */
 .navbar button:active {
     padding-top: 6px;
 }
 
+/* Estilo para as imagens dentro da barra de navegação */
 .navbar img {
     width: 50px;
     height: 50px;
 }
 
-.navbar .library img{
+/* Estilo específico para a imagem da biblioteca */
+.navbar .library img {
     width: 90px;
 }
 
-
-/* Estilo do Player fullscream */
-
+/* Estilo para o player em tela cheia */
 .music-conteiner {
     position: fixed;
-    top:0;
+    top: 0;
     z-index: 100;
     visibility: hidden;
     width: 100vw;
-    background-image:linear-gradient(#207e07,  #040b04);
-    height:100%;
-    color:white;
-    font-family:sans-serif, Verdana, Geneva, Tahoma ;
-    display:flex;
+    background-image: linear-gradient(#207e07, #040b04);
+    height: 100%;
+    color: white;
+    font-family: sans-serif, Verdana, Geneva, Tahoma;
+    display: flex;
     flex-direction: column;
     align-items: center;
     border: 0;
     margin: 0;
     padding: 0;
-} 
-     
-#bellow-cover{
+}
+
+/* Estilo para o conteúdo abaixo da capa no player */
+#bellow-cover {
     width: 90%;
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin:3em 0em 1em 0em;
+    margin: 3em 0em 1em 0em;
 }
 
-.music-conteiner img{
+/* Estilo para imagens no player */
+.music-conteiner img {
     width: 90vw;
 }
 
-button{
-       background-color: inherit;
-       color:inherit;
-       border:none;
-       
+/* Estilo padrão para botões no player */
+button {
+    background-color: inherit;
+    color: inherit;
+    border: none;
 }
 
-#button-conteiner{
-       display:flex;
-       justify-content:space-around;
-       align-items: center;
+/* Estilo do contêiner de botões no player */
+#button-conteiner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.button{font-size: 1.5em;}
-.button-navigate{font-size: 3em;}
-.button-biggest{font-size: 4em;}
-
-#titulo-playlist{ display:flex;
-       justify-content:center;
-       margin: 1em 0em 4em;
+/* Diferentes tamanhos para botões no player */
+.button {
+    font-size: 1.5em;
 }
 
-
-#song-name{ 
-       font-size: 1.5em;
-       font-weight:bolder;
+.button-navigate {
+    font-size: 3em;
 }
 
-.ligth-color{
-       color:rgb(139,156,159);
+.button-biggest {
+    font-size: 4em;
 }
 
+/* Estilo do título da playlist no player */
+#titulo-playlist {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0em 4em;
+}
+
+/* Nome da música exibida no player */
+#song-name {
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+/* Estilo para texto de cor mais clara */
+.ligth-color {
+    color: rgb(139, 156, 159);
+}
+
+/* Estilo para barra de progresso */
 #progress-bar {
     background-color: rgb(139, 156, 159);
     height: 3px;
-    width: 90%; /* Certifique-se de definir uma largura para que ela seja visível */
+    width: 90%;
     position: relative;
     cursor: pointer;
     border-radius: 15px;
     margin-bottom: 1em;
 }
 
+/* Estilo do progresso atual */
 #current-progress {
     height: inherit;
     background-color: white;
     border-radius: inherit;
-    width: 0%; /* Inicialize com 0% */
-    transition: width 0.1s ease-in-out; /* Para um efeito suave ao atualizar */
+    width: 0%;
+    transition: width 0.1s ease-in-out;
 }
 
-/* Player Compacto */
+/* Estilo para o player compacto na barra inferior */
 #player-bar {
     position: fixed;
     bottom: 99px;
     left: 0;
     right: 0;
     z-index: 100;
-    background-image:linear-gradient(#207e07,  #040b04);
+    background-image: linear-gradient(#207e07, #040b04);
     display: flex;
     align-items: center;
     padding: 10px;
@@ -438,23 +487,25 @@ button{
     opacity: 0.95;
 }
 
-
+/* Estilo para ocultar o player compacto */
 #player-bar.player-hidden {
     transform: translateY(100%);
     opacity: 0;
     pointer-events: none;
 }
 
-#player-bar img{
+/* Estilo para imagens dentro do player compacto */
+#player-bar img {
     width: 50px;
-
 }
 
+/* Estilo para informações da música no player compacto */
 #info-mini {
     flex: 1;
     margin-left: 10px;
 }
 
+/* Nome da música no player compacto */
 #mini-song-name,
 #mini-band-name {
     font-size: 14px;
@@ -464,11 +515,13 @@ button{
     overflow: hidden;
 }
 
+/* Botões no player compacto */
 #mini-play-pause,
 #mini-like {
     margin: 0 10px;
 }
 
+/* Barra de progresso no player compacto */
 #mini-progress-bar {
     width: 100%;
     height: 4px;
@@ -478,6 +531,7 @@ button{
     bottom: 0;
 }
 
+/* Progresso atual dentro da barra de progresso do player compacto */
 #mini-current-progress {
     background: white;
     height: 100%;
@@ -485,7 +539,7 @@ button{
     transition: width 0.1s linear;
 }
 
-/* Botão minimizar no fullscreen */
+/* Botão para minimizar o player de tela cheia */
 #minimize {
     position: absolute;
     top: 10px;
@@ -494,13 +548,14 @@ button{
     color: white;
 }
 
-/* Animações de transição */
+/* Animações de transição para o player de tela cheia */
 .music-conteiner {
     visibility: visible;
     opacity: 1;
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
+/* Estilo para ocultar o player de tela cheia */
 .music-conteiner.hidden {
     visibility: hidden;
     transform: translateY(100%);
