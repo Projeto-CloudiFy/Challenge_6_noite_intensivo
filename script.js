@@ -1,6 +1,7 @@
 const songName = document.getElementById("song-name");
 const bandName = document.getElementById("band-name");
 const cover = document.getElementById("cover");
+const covermini = document.getElementById("cover-mini");
 const song = document.getElementById("audio");
 const play = document.getElementById("play");
 const anterior = document.getElementById("anterior");
@@ -8,6 +9,7 @@ const proximo = document.getElementById("proximo");
 const progressoBar = document.getElementById("current-progress");
 const progress = document.getElementById("progress-bar");
 const like = document.getElementById("like");
+const minilike = document.getElementById("mini-like");
 const playerBar = document.getElementById("player-bar");
 const minimizeButton = document.getElementById("minimize");
 const miniPlayPause = document.getElementById("mini-play-pause");
@@ -15,6 +17,7 @@ const miniSongName = document.getElementById("mini-song-name");
 const miniBandName = document.getElementById("mini-band-name");
 const miniProgressBar = document.getElementById("mini-current-progress");
 const buttons = document.querySelectorAll('.buttonTop');
+const playlistSections = document.querySelectorAll(".playlist");
 
 let isPlaying = false;
 let songLike = false;
@@ -22,8 +25,9 @@ let index = 0;
 
 // Playlist
 const playlist = [
-  { songName: "Man in the Box", artist: "Acoustic n´ Roll", file: "Colossus" },
+  { songName: "Man in the Box", artist: "Acoustic n´ Roll", file: "man" },
   { songName: "Igor", artist: "Tyler the Creator", file: "igor" },
+  
 ];
 // Adicionar evento de clique para cada botão
 buttons.forEach(button => {
@@ -33,6 +37,15 @@ buttons.forEach(button => {
       
       // Adicionar a classe 'selected' ao botão clicado
       button.classList.add('selected');
+  });
+});
+
+// Adicione um evento de clique para cada section
+playlistSections.forEach((section, idx) => {
+  section.addEventListener("click", () => {
+    index = idx; // Atualize o índice global
+    loadSong();  // Carregue a música correspondente
+    playSong();  // Reproduza a música
   });
 });
 
@@ -86,6 +99,7 @@ miniPlayPause.addEventListener("click", (e) => {
 // Carregar música
 function loadSong() {
   cover.src = `imagem/${playlist[index].file}.jpg`;
+  covermini.src = `imagem/${playlist[index].file}.jpg`;
   song.src = `musica/${playlist[index].file}.mp3`;
   songName.innerText = playlist[index].songName;
   bandName.innerText = playlist[index].artist;
@@ -193,12 +207,14 @@ progress.addEventListener("mousemove", (event) => {
 // Funções de curtida
 function likeSong() {
   like.querySelector(".bi").classList.replace("bi-heart", "bi-heart-fill");
+  minilike.querySelector(".bi").classList.replace("bi-heart", "bi-heart-fill");
   songLike = true;
   localStorage.setItem(`like_${playlist[index].file}`, true);
 }
 
 function deslikeSong() {
   like.querySelector(".bi").classList.replace("bi-heart-fill", "bi-heart");
+  minilike.querySelector(".bi").classList.replace("bi-heart-fill", "bi-heart");
   songLike = false;
   localStorage.setItem(`like_${playlist[index].file}`, false);
 }
@@ -208,6 +224,7 @@ function likeSongDecider() {
 }
 
 like.addEventListener("click", likeSongDecider);
+minilike.addEventListener("click", likeSongDecider);
 
 function loadLikeState() {
   const savedLike = localStorage.getItem(`like_${playlist[index].file}`);
