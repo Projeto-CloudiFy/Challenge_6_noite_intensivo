@@ -4,13 +4,13 @@
     padding: 0;
     border: none;
     box-sizing: border-box;
-    color: white;
+    color: var(--cor4); 
 }
 
 /* Configurações gerais para o HTML */
 html {
     display: block;
-    background: #121212;
+    background: var(--cor1);
     font-family: Calibri;
 }
 
@@ -23,6 +23,7 @@ body {
 
 /* Classe para adicionar espaçamento */
 .pad {
+    background-color: var(--cor1);
     padding: 5px 5px 180px 5px;
 }
 
@@ -33,7 +34,7 @@ header {
     left: 0;
     right: 0;
     width: 100%;
-    background-color: #121212;
+    background-color: var(--cor1);
     z-index: 100;
     display: flex;
     padding: 13px 0;
@@ -43,7 +44,7 @@ header {
 /* Estilo do botão de perfil */
 .perfilbutton {
     margin: 0 15px;
-    background-color: #121212;
+    background-color:var(--cor1);
     border: none;
     padding: 0;
 }
@@ -57,8 +58,8 @@ header {
 
 /* Estilo dos botões na parte superior */
 .buttonTop {
-    background-color: rgb(51, 51, 51);
-    color: black;
+    background-color: var(--cor3);
+    color: var(--cor4);
     min-width: 70px;
     height: 35px;
     border-radius: 20px;
@@ -76,7 +77,7 @@ header {
 /* Estilo de seleção dos botões no topo */
 .buttonTop.selected {
     background-color: green;
-    color: white;
+    color: var(--cor4);
 }
 
 /* Estilo para espaçamento lateral no elemento principal */
@@ -131,7 +132,7 @@ main {
 /* Estilo individual das playlists */
 .playlist {
     margin: 4px;
-    background-color: rgb(51, 51, 51);
+    background-color: var(--cor3);
     width: auto;
     height: 55px;
     align-items: center;
@@ -328,7 +329,7 @@ button:hover {
 
 /* Barra de navegação fixa na parte inferior */
 .navbar {
-    background-color: #121212;
+    background-color: #1e1f26;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -350,7 +351,7 @@ button:hover {
     justify-content: center;
     margin: 0 25px;
     width: 100px;
-    background-color: #121212;
+    background-color: #1e1f26;
     border: none;
 }
 
@@ -470,21 +471,47 @@ button {
 }
 
 /* Estilo para o player compacto na barra inferior */
-#player-bar {
+#mini-player{
     position: fixed;
     bottom: 99px;
     left: 0;
     right: 0;
     z-index: 100;
-    background-image: linear-gradient(#207e07, #040b04);
+
     display: flex;
     align-items: center;
     padding: 10px;
     height: 70px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    border-radius: 10px;
+    opacity: 0.95;
+}
+
+#player-bar {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    background-image: linear-gradient(#207e07, #040b04);
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.5s ease, opacity 0.5s ease;
     border-radius: 10px;
     opacity: 0.95;
+}
+
+#player-button{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    height: 70px;
+    z-index: 120;
+    right: 0;
+    opacity: 0.95;
+    transition: transform 0.5s ease, opacity 0.5s ease;  
 }
 
 /* Estilo para ocultar o player compacto */
@@ -513,6 +540,7 @@ button {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    color: white;
 }
 
 /* Botões no player compacto */
@@ -561,4 +589,71 @@ button {
     transform: translateY(100%);
     opacity: 0;
     pointer-events: none;
+}
+
+/* Botão tema*/
+body[data-theme="light"] {
+    --cor1: #b6bbe4;
+    --cor2: #abb7d4;
+    --cor3: rgb(205, 205, 205);
+    --cor4: rgb(0, 0, 0);
+}
+
+body[data-theme="dark"] {
+    --cor1: #1e1f26;
+    --cor2: #292c33;
+    --cor3: rgb(51, 51, 51);
+    --cor4: rgb(255, 255, 255);
+}
+
+.theme-switcher {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+
+}
+
+.theme-switcher label {
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+    display: block;
+    text-indent: -9999px;
+    height: 30px;
+    width: 60px;
+    border-radius: 50px;
+    background-color: rgb(red, green, blue);
+    transition: 0.5 ease background-color;
+
+}
+
+.theme-switcher input {
+    width: 0;
+    height: 0;
+    display: none;
+    visibility: hidden;
+}
+
+.theme-switcher label::after {
+
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    top: 50%;
+    left: 5px;
+    transform: translatey(-50%);
+    background-color: rgb(46, 43, 68);
+    transition: 0, 5 ease;
+}
+
+.theme-switcher input:checked+label::after {
+    left: calc(100% - 25px);
+    background-color: aliceblue;
+
+}
+
+.theme-switcher input:checked+label {
+    background-color: rgb(206, 206, 206);
+    border: 2px solid whitesmoke;
 }

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body>
+<body data-theme="dark">
     <div class="pad">
     <header class="top">
             <button class="perfilbutton"><img class="img" src="assets/imgs/FB_IMG_1540908521226.jpg" alt=""></button>
@@ -19,10 +19,14 @@
             <button class="buttonTop">Música</button>
 
             <button class="buttonTop">Podcast</button>
+
+            <div class="theme-switcher">
+                <input class="input-theme" type="checkbox" id="switcher">
+                <label for="switcher">Trocar</label>
+            </div>
     </header>
     <div class="esp">
         <main>
-          
             <section class="feed">
                 <section class="areaplaylists">
                     <div class="areatitle">
@@ -332,16 +336,20 @@
     </nav>
     </div>
 <!-- Player Compacto -->
-<div id="player-bar" class="player-hidden">
-    <img id="cover-mini" src="assets/imgs/capa-mini.jpg" alt="Capa da música" />
-    <div id="info-mini">
-        <div id="mini-song-name">Nome da música</div>
-        <div id="mini-band-name">Nome da banda</div>
+<div id="mini-player">
+    <div id="player-bar" class="player-hidden">
+        <img id="cover-mini" src="assets/imgs/capa-mini.jpg" alt="Capa da música" />
+        <div id="info-mini">
+            <div id="mini-song-name">Nome da música</div>
+            <div id="mini-band-name">Nome da banda</div>
+        </div>
+        <div id="mini-progress-bar">
+            <div id="mini-current-progress"></div>
+        </div>
     </div>
-    <button id="mini-like" class="button"><i class="bi bi-heart"></i></button>
-    <button id="mini-play-pause" class="button"><i class="bi bi-play-circle"></i></button>
-    <div id="mini-progress-bar">
-        <div id="mini-current-progress"></div>
+    <div id="player-button">
+        <button id="mini-like" class="button"><i class="bi bi-heart"></i></button>
+        <button id="mini-play-pause" class="button"><i class="bi bi-play-circle"></i></button>
     </div>
 </div>
 
