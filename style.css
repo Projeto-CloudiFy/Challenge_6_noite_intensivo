@@ -608,8 +608,8 @@ body[data-theme="dark"] {
 
 .theme-switcher {
     position: absolute;
-    right: 30px;
-    top: 10px;
+    right: 2%;
+    top: 25%;
 
 }
 
