@@ -18,6 +18,7 @@ const miniBandName = document.getElementById("mini-band-name");
 const miniProgressBar = document.getElementById("mini-current-progress");
 const buttons = document.querySelectorAll('.buttonTop');
 const playlistSections = document.querySelectorAll(".playlist");
+const input = document.querySelector('.theme-switcher input')
 
 let isPlaying = false;
 let songLike = false;
@@ -27,8 +28,18 @@ let index = 0;
 const playlist = [
   { songName: "Man in the Box", artist: "Acoustic n´ Roll", file: "man" },
   { songName: "Igor", artist: "Tyler the Creator", file: "igor" },
-  
 ];
+
+//Função para alterar o tema
+input.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    document.body.setAttribute('data-theme', 'light')
+  } else {
+    document.body.setAttribute('data-theme', 'dark')
+
+  }
+})
+
 // Adicionar evento de clique para cada botão
 buttons.forEach(button => {
   button.addEventListener('click', () => {
@@ -106,16 +117,23 @@ function loadSong() {
   miniSongName.innerText = playlist[index].songName;
   miniBandName.innerText = playlist[index].artist;
   loadLikeState();
+  loadProgress();
 }
 
 // Funções de navegação
 function anteriorSong() {
+
+  localStorage.removeItem('progress')
+
   index = index === 0 ? playlist.length - 1 : index - 1;
   loadSong();
   playSong();
 }
 
 function proximoSong() {
+  
+  localStorage.removeItem('progress')
+  
   index = index === playlist.length - 1 ? 0 : index + 1;
   loadSong();
   playSong();
@@ -129,34 +147,27 @@ function saveProgress() {
     const progress = Math.floor((song.currentTime / song.duration) * 100); // Calcula o progresso em porcentagem
     progressoBar.style.width = progress + '%'; // Atualiza a barra de progresso visualmente
     localStorage.setItem("progress", JSON.stringify(progress)); // Salva o progresso no localStorage
-  }
+    localStorage.setItem("duration", JSON.stringify(song.duration)); // Salva o duração no localStorage
+    console.log("Entrou no if")
+  } else console.log("Não entrou no if")
 }
 
 function loadProgress() {
   const savedProgress = localStorage.getItem("progress");
-  if (savedProgress && song.duration) { // Verifica se o progresso salvo e a duração estão disponíveis
+  const savedDuration = localStorage.getItem("duration")
+  console.log(savedProgress)
+  console.log(savedDuration)
+  if (savedProgress && savedDuration) { // Verifica se o progresso salvo e a duração estão disponíveis
     const progress = JSON.parse(savedProgress);
-    song.currentTime = (progress / 100) * song.duration; // Ajusta o tempo da música
+    song.currentTime = (progress / 100) * savedDuration; // Ajusta o tempo da música
     progressoBar.style.width = progress + '%'; // Atualiza a barra de progresso
+    console.log("Carragando")
+  } else {
+    console.log("Não carragando")
   }
 }
 
-function saveProgress() {
-  if (song.duration && song.currentTime) { // Verifica se song.duration está definido
-    const progress = Math.floor((song.currentTime / song.duration) * 100); // Calcula o progresso em porcentagem
-    miniProgressBar.style.width = progress + '%'; // Atualiza a barra de progresso visualmente
-    localStorage.setItem("progress", JSON.stringify(progress)); // Salva o progresso no localStorage
-  }
-}
 
-function loadProgress() {
-  const savedProgress = localStorage.getItem("progress");
-  if (savedProgress && song.duration) { // Verifica se o progresso salvo e a duração estão disponíveis
-    const progress = JSON.parse(savedProgress);
-    song.currentTime = (progress / 100) * song.duration; // Ajusta o tempo da música
-    miniProgressBar.style.width = progress + '%'; // Atualiza a barra de progresso
-  }
-}
 
 //Atualizar o progresso com o toque
 function setProgress(event){
@@ -173,19 +184,13 @@ function setProgress(event){
   song.currentTime = newTime;
 }
 
-// Atualiza o progresso
+// Atualizar progresso automaticamente
 song.addEventListener("timeupdate", () => {
-  if (song.duration){
-    const progressPercent = (song.currentTime / song.duration)* 100;
+  if (song.duration) {
+    const progressPercent = (song.currentTime / song.duration) * 100;
     progressoBar.style.width = `${progressPercent}%`;
-  }
-});
-
-// Atualiza o mini progresso
-song.addEventListener("timeupdate", () => {
-  if (song.duration){
-    const progressPercent = (song.currentTime / song.duration)* 100;
     miniProgressBar.style.width = `${progressPercent}%`;
+    saveProgress();
   }
 });
 
