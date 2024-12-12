@@ -18,7 +18,8 @@ const miniBandName = document.getElementById("mini-band-name");
 const miniProgressBar = document.getElementById("mini-current-progress");
 const buttons = document.querySelectorAll('.buttonTop');
 const playlistSections = document.querySelectorAll(".playlist");
-const input = document.querySelector('.theme-switcher input')
+const input = document.querySelector('.theme-switcher input')
+
 
 let isPlaying = false;
 let songLike = false;
@@ -28,16 +29,15 @@ let index = 0;
 const playlist = [
   { songName: "Man in the Box", artist: "Acoustic n´ Roll", file: "man" },
   { songName: "Igor", artist: "Tyler the Creator", file: "igor" },
-];
+]
 
 //Função para alterar o tema
 input.addEventListener('change', (e) => {
   if (e.target.checked) {
     document.body.setAttribute('data-theme', 'light')
   } else {
-    document.body.setAttribute('data-theme', 'dark')
-
-  }
+    document.body.setAttribute('data-theme', 'dark')
+}
 })
 
 // Adicionar evento de clique para cada botão
